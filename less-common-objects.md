@@ -1,8 +1,6 @@
-# Javascript Tricks
+# Less Common Objects
 
-## Uncommonly Seen API's
-
-### Map
+## Map
 
 A map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
 
@@ -21,7 +19,7 @@ alert(map.get("1")); // 'str1'
 alert(map.size); // 3
 ```
 
-### Set
+## Set
 
 A Set is a special type collection – “set of values” (without keys), where each value may occur only once.
 
@@ -47,7 +45,7 @@ for (let user of set) {
 }
 ```
 
-### WeakMap and WeakSet
+## WeakMap and WeakSet
 
 WeakMap is a Map that allows only objects as keys and removes them once they become inaccessible by other means.
 
@@ -97,7 +95,7 @@ weakSet.add(mary);
 weakSet.delete(john);
 ```
 
-### Symbol
+## Symbol
 
 Symbols are guaranteed to be unique. Even if we create many symbols with the same description, they are different values. The description is just a label that doesn’t affect anything.
 
@@ -154,7 +152,7 @@ let id2 = Symbol("id");
 alert(id == id2); // false
 ```
 
-### Reflect
+## Reflect
 
 The Reflect object is built-in, as a wrapper around the JavaScript’s internal methods. It’s not a function object, so it’s not callable.
 
