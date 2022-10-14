@@ -34,10 +34,10 @@ map.set(true, "bool1"); // a boolean key
 
 // remember the regular Object? it would convert keys to string
 // Map keeps the type, so these two are different:
-alert(map.get(1)); // 'num1'
-alert(map.get("1")); // 'str1'
+console.log(map.get(1)); // 'num1'
+console.log(map.get("1")); // 'str1'
 
-alert(map.size); // 3
+console.log(map.size); // 3
 ```
 
 ### Set
@@ -59,10 +59,10 @@ set.add(john);
 set.add(mary);
 
 // set keeps only unique values
-alert(set.size); // 3
+console.log(set.size); // 3
 
 for (let user of set) {
-  alert(user.name); // John (then Pete and Mary)
+  console.log(user.name); // John (then Pete and Mary)
 }
 ```
 
@@ -124,7 +124,7 @@ Symbols are guaranteed to be unique. Even if we create many symbols with the sam
 let id1 = Symbol("id");
 let id2 = Symbol("id");
 
-alert(id1 == id2); // false
+console.log(id1 == id2); // false
 ```
 
 Symbols are skipped by for…in.
@@ -136,9 +136,9 @@ let user = {
   [id]: 123, // not "id": 123
 };
 
-for (let key in user) alert(key); // name
+for (let key in user) console.log(key); // name
 
-alert("Direct: " + user[id]); // Direct: 123
+console.log("Direct: " + user[id]); // Direct: 123
 ```
 
 Symbols are accessible directly, without using for…in.
@@ -153,7 +153,7 @@ let user = {
 
 let clone = Object.assign({}, user);
 
-alert(clone[id]); // 123
+console.log(clone[id]); // 123
 ```
 
 Symbols in a literal
@@ -170,7 +170,7 @@ let user = {
 let id2 = Symbol("id");
 
 // these are same symbols
-alert(id == id2); // false
+console.log(id == id2); // false
 ```
 
 ### Reflect
@@ -199,11 +199,11 @@ let user = {
 
 let proxy = new Proxy(user, {
   get(target, prop, receiver) {
-    alert(`GET ${prop}`);
+    console.log(`GET ${prop}`);
     return target[prop];
   },
   set(target, prop, val, receiver) {
-    alert(`SET ${prop}=${val}`);
+    console.log(`SET ${prop}=${val}`);
     target[prop] = val;
     return true;
   },
@@ -211,7 +211,7 @@ let proxy = new Proxy(user, {
 
 // look at the calls above
 proxy.name = "Pete"; // set name=Pete
-alert(proxy.name); // get name
+console.log(proxy.name); // get name
 ```
 
 ### Generator
@@ -229,15 +229,15 @@ let generator = generateSequence();
 
 let one = generator.next();
 
-alert(JSON.stringify(one)); // {value: 1, done: false}
+console.log(JSON.stringify(one)); // {value: 1, done: false}
 
 let two = generator.next();
 
-alert(JSON.stringify(two)); // {value: 2, done: false}
+console.log(JSON.stringify(two)); // {value: 2, done: false}
 
 let three = generator.next();
 
-alert(JSON.stringify(three)); // {value: 3, done: true}
+console.log(JSON.stringify(three)); // {value: 3, done: true}
 ```
 
 ### Decorator

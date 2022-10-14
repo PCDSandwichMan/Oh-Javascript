@@ -9,3 +9,4 @@ Oh Javascript is a collection of Javascript tricks and tips that I have found us
 ## Table of Contents
 
 - [Less Common Objects](less-common-objects.md)
+- [Common Helper Functions](common-helper-functions.js)
